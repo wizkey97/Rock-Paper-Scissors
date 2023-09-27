@@ -58,8 +58,8 @@ function playRound(playerSelection , computerSelection){
 function game(){
     for(let i = 0; i < 5; i++){
 
-    const playerSelection = prompt("Please enter Rock Paper or Scissors");
-    const computerSelection = getComputerChoice();
+    let playerSelection = prompt("Please enter Rock Paper or Scissors");
+    let computerSelection = getComputerChoice();
     console.log(playRound(playerSelection,computerSelection));
     console.log(playerScore);
     console.log(computeScore);
@@ -79,7 +79,8 @@ if(playerScore > computeScore){
 }
 else if(playerScore < computeScore){
     console.log("You lost the game!")
-}else{
+}
+else{
     console.log("It's a draw!")
 };
 
