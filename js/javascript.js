@@ -27,7 +27,7 @@ function playRound(playerSelection , computerSelection){
         }
             else{
                 playerScore = playerScore + 1;
-                return "you win! Rock beats paper"
+                return "you win! Rock beats scissors"
         }
     }
 
