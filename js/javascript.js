@@ -1,3 +1,4 @@
+// computer gets randomly rock paper or scissors
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random()* 3);
 
@@ -13,71 +14,72 @@ function getComputerChoice(){
         };
 
 };
-
+// one round of rock-paper-scissors between the player and the computer
 function playRound(playerSelection , computerSelection){
  
     if(playerSelection.toLowerCase() == computerSelection){
         return "Draw";
-    }
+    };
 
     if(playerSelection.toLowerCase() == "rock"){
         if(computerSelection == "paper"){
-            computeScore = computeScore + 1;
+            computerScore = computerScore + 1;
             return "you lose! Paper beats rock" ;
         }
             else{
                 playerScore = playerScore + 1;
                 return "you win! Rock beats scissors"
         }
-    }
+    };
 
     if(playerSelection.toLowerCase() == "paper"){
         if(computerSelection == "scissors"){
-            computeScore = computeScore + 1;
+            computerScore = computerScore + 1;
             return "you lose! Scissors beats paper";
         }
             else{
                 playerScore = playerScore + 1;
                 return "you win! Paper beats rock"
         }
-    }
+    };
 
     if(playerSelection.toLowerCase() == "scissors"){
         if(computerSelection == "rock"){
-            computeScore = computeScore + 1;
+            computerScore = computerScore + 1;
             return "you lose! Rock beats scissors";
         }
             else{
                 playerScore = playerScore + 1;
                 return "you win! Scissors beats paper"
         }
-    }
+    };
 
-}
-
-function game(){
+};
+// One game of rock-paper-scissors between the player and the computer
+// One game is 5 rounds
+function playGame(){
     for(let i = 0; i < 5; i++){
 
     let playerSelection = prompt("Please enter Rock Paper or Scissors");
     let computerSelection = getComputerChoice();
     console.log(playRound(playerSelection,computerSelection));
     console.log(playerScore);
-    console.log(computeScore);
+    console.log(computerScore);
 
-     }
+     };
 
- }
+ };
 
 
 let playerScore = 0;
-let computeScore = 0;
+let computerScore = 0;
 
-game();
+playGame();
 
-if(playerScore > computeScore){
+if(playerScore > computerScore){
     console.log("You won the game!")
 }
-else if(playerScore < computeScore){
+else if(playerScore < computerScore){
     console.log("You lost the game!")
 }
 else{
